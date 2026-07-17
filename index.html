@@ -1,0 +1,2621 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Lakshmi Dental Care
+    </title>
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🦷</text></svg>'>
+    <meta
+      name="description"
+      content="Expert dental care by Dr. Arvind P V. Dental Surgeon & Esthetic Dentist. Vijaynagar, Bengaluru."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="Lakshmi Dental Care — Compassionate Dental Healthcare"
+    />
+    <meta
+      property="og:description"
+      content="Expert dental care by Dr. Arvind P V. Dental Surgeon & Esthetic Dentist. Vijaynagar, Bengaluru."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ============================================================
+       ALL CSS
+  ============================================================ -->
+    <style>
+      /* ── CSS RESET & BASE ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --primary: #0f4c81;
+        --primary-dk: #0a365b;
+        --accent: #4db6ac;
+        --bg: #f7fafc;
+        --bg-alt: #eef5fb;
+        --text: #2d2d2d;
+        --sub: #6b7280;
+        --white: #ffffff;
+        --dark: #1b2b2b;
+        --placeholder-bg: #e8f4f4;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        line-height: 1.25;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ── UTILITY ── */
+      .container {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .section-pad {
+        padding: 80px 0;
+      }
+
+      .section-label {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 14px;
+      }
+
+      .section-heading {
+        font-size: clamp(28px, 4vw, 42px);
+        color: var(--text);
+        margin-bottom: 18px;
+      }
+
+      .section-sub {
+        color: var(--sub);
+        max-width: 560px;
+        font-size: 17px;
+      }
+
+      /* ── BUTTONS ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 50px;
+        padding: 13px 30px;
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.22s ease;
+        border: 2px solid transparent;
+        white-space: nowrap;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: var(--white);
+        border-color: var(--primary);
+      }
+      .btn-primary:hover {
+        background: var(--primary-dk);
+        border-color: var(--primary-dk);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(27, 107, 107, 0.28);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-outline:hover {
+        background: var(--primary);
+        color: var(--white);
+        transform: translateY(-1px);
+      }
+
+      .btn-white {
+        background: var(--white);
+        color: var(--primary);
+        border-color: var(--white);
+      }
+      .btn-white:hover {
+        background: var(--bg);
+      }
+
+      /* ── CARDS ── */
+      .card {
+        background: var(--white);
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+        transition:
+          box-shadow 0.25s ease,
+          transform 0.25s ease;
+      }
+      .card:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+        transform: translateY(-3px);
+      }
+
+      /* ── IMAGE PLACEHOLDER ── */
+      .img-placeholder {
+        background: var(--placeholder-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        color: #8aacac;
+        font-size: 15px;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* ── LIGHTBOX ── */
+      .lightbox-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.88);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.25s ease;
+      }
+      .lightbox-overlay.open {
+        display: flex;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      .lightbox-img {
+        max-width: 90vw;
+        max-height: 88vh;
+        border-radius: 12px;
+        box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+        animation: zoomIn 0.25s ease;
+      }
+      @keyframes zoomIn {
+        from { transform: scale(0.92); opacity: 0; }
+        to   { transform: scale(1);    opacity: 1; }
+      }
+      .lightbox-close {
+        position: fixed;
+        top: 20px;
+        right: 28px;
+        font-size: 36px;
+        color: white;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 2001;
+        background: none;
+        border: none;
+        opacity: 0.85;
+        transition: opacity 0.2s;
+      }
+      .lightbox-close:hover { opacity: 1; }
+      .g-item { cursor: pointer; }
+
+      /* ── ALT SECTION BG ── */
+      .bg-alt {
+        background: var(--bg-alt);
+      }
+      .bg-white {
+        background: var(--white);
+      }
+
+      /* ============================================================
+       1. NAVBAR
+    ============================================================ */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--white);
+        border-bottom: 1px solid transparent;
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+      }
+      #navbar.scrolled {
+        border-bottom-color: #e8e8e8;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        line-height: 1.1;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-logo {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .nav-brand .brand-top {
+        font-family: "Playfair Display", serif;
+        font-size: 21px;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 1px;
+      }
+      .nav-brand .brand-sub {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--sub);
+        letter-spacing: 0.5px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text);
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-cta {
+        margin-left: 16px;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+        background: none;
+        border: none;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-top: 1px solid #efefef;
+        padding: 16px 24px 24px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        gap: 4px;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu a {
+        padding: 12px 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text);
+        border-bottom: 1px solid #f0f0f0;
+        transition: color 0.2s;
+      }
+      .mobile-menu a:hover {
+        color: var(--primary);
+      }
+      .mobile-menu .btn {
+        margin-top: 12px;
+        width: 100%;
+      }
+
+      /* ============================================================
+       2. HERO
+    ============================================================ */
+      #hero {
+        padding: 140px 0 80px;
+        background: var(--bg);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero-text {
+        order: 1;
+      }
+      .hero-image {
+        order: 2;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(27, 107, 107, 0.08);
+        color: var(--primary);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 6px 16px;
+        border-radius: 50px;
+        margin-bottom: 22px;
+      }
+
+      .hero-headline {
+        font-size: clamp(28px, 3.5vw, 42px);
+        color: var(--text);
+        margin-bottom: 20px;
+        line-height: 1.2;
+        max-width: 480px;
+      }
+
+      .hero-sub {
+        font-size: 17px;
+        color: var(--sub);
+        margin-bottom: 24px;
+        line-height: 1.7;
+      }
+
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 36px;
+      }
+
+      .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+
+      .trust-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--sub);
+        font-weight: 500;
+      }
+      .trust-badge .check {
+        color: var(--primary);
+        font-size: 15px;
+      }
+
+      .hero-img-wrap {
+        width: 100%;
+        height: 520px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+      }
+      .hero-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+      .hero-img-wrap:hover img {
+        transform: scale(1.05);
+      }
+
+      /* ============================================================
+       3. MEET THE DOCTOR
+    ============================================================ */
+      #doctor .doctor-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .doctor-img-wrap {
+        width: 100%;
+        max-width: 400px;
+        height: 480px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 36px rgba(0, 0, 0, 0.13);
+      }
+      .doctor-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+      .doctor-img-wrap:hover img {
+        transform: scale(1.05);
+      }
+
+      .doctor-name {
+        font-size: clamp(35px, 3.5vw, 36px);
+        margin-bottom: 16px;
+      }
+
+      .doctor-designation {
+        font-size: 0.6em;
+        font-weight: 100;
+        display: inline-block;
+      }
+
+      .badges-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: 50px;
+        font-size: 12px;
+        font-weight: 600;
+        border: 1.5px solid;
+      }
+      .badge-teal {
+        color: var(--primary);
+        border-color: rgba(27, 107, 107, 0.35);
+        background: rgba(27, 107, 107, 0.07);
+      }
+      .badge-rose {
+      border-color: rgba(15, 76, 129, 0.2);
+      color: #0f4c81;
+      background: rgba(15, 76, 129, 0.06);
+      }
+
+      .doctor-bio {
+        color: var(--sub);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .doctor-bio strong {
+        color: var(--text);
+      }
+
+      /* ============================================================
+       4. SERVICES
+    ============================================================ */
+      #services .services-intro {
+        margin-bottom: 50px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .service-card {
+        padding: 36px 28px;
+      }
+
+      .service-icon {
+        font-size: 36px;
+        margin-bottom: 18px;
+        display: block;
+      }
+
+      .service-title {
+        font-family: "Playfair Display", serif;
+        font-size: 19px;
+        margin-bottom: 10px;
+        color: var(--text);
+      }
+
+      .service-desc {
+        color: var(--sub);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      /* ============================================================
+       5. WHY CHOOSE US
+    ============================================================ */
+      #why .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 28px;
+        margin-top: 50px;
+      }
+
+      .why-card {
+        padding: 32px 28px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .why-icon {
+        font-size: 30px;
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        background: rgba(27, 107, 107, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .why-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 8px;
+      }
+
+      .why-desc {
+        font-size: 14px;
+        color: var(--sub);
+        line-height: 1.7;
+      }
+
+      /* ============================================================
+       6. CLINIC TIMINGS
+    ============================================================ */
+
+      .timings-intro {
+        margin-bottom: 32px;
+      }
+
+      .timings-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+      }
+
+      .timings-table thead {
+        background: var(--primary);
+        color: var(--white);
+      }
+      .timings-table thead th {
+        padding: 14px 20px;
+        text-align: left;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      .timings-table tbody tr {
+        background: var(--white);
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .timings-table tbody tr:last-child {
+        border-bottom: none;
+      }
+      .timings-table tbody tr:hover {
+        background: #f8fafa;
+      }
+      .timings-table td {
+        padding: 13px 20px;
+        font-size: 14px;
+        color: var(--text);
+      }
+      .timings-table td.day {
+        font-weight: 600;
+        color: var(--primary);
+      }
+      .timings-table td.closed {
+        color: var(--sub);
+        font-style: italic;
+      }
+
+      .timings-note {
+        margin-top: 20px;
+        font-size: 14px;
+        color: var(--sub);
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .timings-note::before {
+        content: "ℹ️";
+        flex-shrink: 0;
+      }
+
+      .timings-contact-block {
+        padding: 32px;
+      }
+      .timings-contact-block h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 15px;
+      }
+      .contact-item .ci-icon {
+        width: 38px;
+        height: 38px;
+        background: rgba(27, 107, 107, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+      .contact-item a {
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      /* CLINIC GALLERY */
+      .slideshow-section {
+        margin-top: 0;
+      }
+      .slideshow-heading {
+        text-align: center;
+        margin-bottom: 32px;
+        font-size: 24px;
+        color: var(--text);
+      }
+
+      
+
+      /* TESTIMONIALS dots */
+      .slide-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .dot.active {
+        background: var(--primary);
+        transform: scale(1.3);
+      }
+
+      @keyframes fadeSlide {
+        from {
+          opacity: 0;
+          transform: scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* ============================================================
+       7. TESTIMONIALS
+    ============================================================ */
+      #testimonials .testimonials-intro {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      #testimonials .section-sub {
+        margin: 0 auto;
+      }
+
+      .testimonial-carousel {
+        position: relative;
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .testimonial-slides-wrapper {
+        overflow: hidden;
+      }
+
+      .testimonial-slide {
+        display: none;
+        animation: fadeSlide 0.5s ease;
+      }
+      .testimonial-slide.active {
+        display: block;
+      }
+
+      .testimonial-card {
+        padding: 48px 44px;
+        position: relative;
+      }
+
+      .quote-mark {
+        font-family: "Playfair Display", serif;
+        font-size: 96px;
+        line-height: 0.6;
+        color: rgba(27, 107, 107, 0.12);
+        position: absolute;
+        top: 36px;
+        left: 36px;
+      }
+
+      .testimonial-text {
+        font-size: 17px;
+        color: var(--text);
+        line-height: 1.8;
+        margin-bottom: 28px;
+        padding-top: 32px;
+        font-style: italic;
+      }
+
+      .testimonial-meta {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .meta-avatar {
+        width: 48px;
+        height: 48px;
+        background: var(--placeholder-bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: var(--primary);
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+        flex-shrink: 0;
+      }
+
+      .meta-name {
+        font-weight: 700;
+        color: var(--text);
+        font-size: 15px;
+      }
+      .meta-role {
+        font-size: 13px;
+        color: var(--sub);
+        margin-top: 2px;
+      }
+
+      .stars {
+        color: #f59e0b;
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin-top: 4px;
+      }
+
+      .testimonial-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--white);
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        font-size: 18px;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.2s,
+          box-shadow 0.2s;
+        z-index: 10;
+      }
+      .testimonial-btn:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+      .testimonial-btn.prev {
+        left: -22px;
+      }
+      .testimonial-btn.next {
+        right: -22px;
+      }
+
+      /* ============================================================
+       8. CONTACT
+    ============================================================ */
+      #contact .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .contact-left h3 {
+        font-size: 26px;
+        margin-bottom: 8px;
+      }
+
+      .contact-left .tagline {
+        color: var(--sub);
+        margin-bottom: 36px;
+        font-size: 15px;
+      }
+
+      .contact-info-item {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 24px;
+        align-items: flex-start;
+      }
+
+      .cii-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(27, 107, 107, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .cii-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+      }
+      .cii-value {
+        font-size: 15px;
+        color: var(--text);
+        line-height: 1.5;
+      }
+      .cii-value a {
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .cii-value a:hover {
+        text-decoration: underline;
+      }
+
+      .fee-note {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(27, 107, 107, 0.06);
+        border: 1px solid rgba(27, 107, 107, 0.15);
+        border-radius: 12px;
+        padding: 16px 20px;
+        font-size: 15px;
+        margin-top: 8px;
+      }
+      .fee-icon {
+        font-size: 22px;
+      }
+
+      /* FORM */
+      .contact-form-wrap {
+        padding: 40px;
+      }
+      .contact-form-wrap h3 {
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 7px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1.5px solid #e0e0e0;
+        border-radius: 10px;
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        color: var(--text);
+        background: var(--white);
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        outline: none;
+        appearance: none;
+      }
+      .form-control:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(27, 107, 107, 0.12);
+      }
+
+      textarea.form-control {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .radio-group {
+        display: flex;
+        gap: 20px;
+      }
+      .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .radio-option input {
+        accent-color: var(--primary);
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+      }
+
+      .form-submit {
+        width: 100%;
+        padding: 15px 30px;
+        font-size: 16px;
+      }
+
+      .success-msg {
+        display: none;
+        background: rgba(27, 107, 107, 0.08);
+        border: 1.5px solid rgba(27, 107, 107, 0.25);
+        border-radius: 12px;
+        padding: 20px 24px;
+        text-align: center;
+        margin-top: 16px;
+      }
+      .success-msg.show {
+        display: block;
+      }
+      .success-msg .check-big {
+        font-size: 36px;
+        margin-bottom: 8px;
+      }
+      .success-msg p {
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 16px;
+      }
+      .success-msg span {
+        color: var(--sub);
+        font-size: 14px;
+      }
+
+      /* ============================================================
+       9. FOOTER
+    ============================================================ */
+      #footer {
+        background: linear-gradient(135deg, #0a365b 0%, #0f4c81 100%);
+        color: rgba(255, 255, 255, 0.85);
+        padding: 60px 0 0;
+        color: rgba(255, 255, 255, 0.85);
+        padding: 60px 0 0;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 40px;
+      }
+
+      .footer-brand .brand-top {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--white);
+        letter-spacing: 1px;
+      }
+      .footer-brand .brand-sub {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 16px;
+      }
+      .footer-tagline {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.7;
+        max-width: 280px;
+      }
+
+      .footer-col h4 {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 20px;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col ul li {
+        margin-bottom: 10px;
+      }
+      .footer-col ul li a {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.75);
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--white);
+      }
+
+      .footer-contact-item {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.75);
+      }
+      .footer-contact-item .fci {
+        flex-shrink: 0;
+        font-size: 16px;
+      }
+      .footer-contact-item a {
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .footer-contact-item a:hover {
+        color: var(--white);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+        text-align: center;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .developer-credit {
+        color: inherit;
+        font-weight: inherit;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .developer-credit:hover {
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow:
+          0 0 5px rgba(255, 255, 255, 0.4),
+          0 0 10px rgba(255, 255, 255, 0.25);
+      }
+
+      /* ============================================================
+       FLOATING ELEMENTS
+    ============================================================ */
+      .float-whatsapp {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 999;
+        width: 56px;
+        height: 56px;
+        background: #25d366;
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        font-size: 26px;
+      }
+      .float-whatsapp:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+      }
+
+      .float-backtop {
+        position: fixed;
+        bottom: 96px;
+        right: 28px;
+        z-index: 999;
+        width: 48px;
+        height: 48px;
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(27, 107, 107, 0.35);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          opacity 0.3s;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+      }
+      .float-backtop.visible {
+        display: flex;
+      }
+      .float-backtop:hover {
+        transform: scale(1.1);
+        background: var(--primary-dk);
+      }
+
+      /* ── SERVICES CAROUSEL ── */
+      .services-carousel-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 40px;
+      }
+
+      .services-track-outer {
+        overflow: hidden;
+        flex: 1;
+      }
+
+      .services-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.4s ease;
+      }
+
+      .svc-card {
+        flex: 0 0 calc(33.33% - 14px);
+        background: var(--white);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        cursor: default;
+      }
+
+      .svc-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+      }
+
+      .svc-img-wrap {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        background: var(--placeholder-bg);
+      }
+
+      .svc-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+
+      .svc-card:hover .svc-img-wrap img {
+        transform: scale(1.05);
+      }
+
+      .svc-name {
+        padding: 16px 18px;
+        font-family: 'Playfair Display', serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .svc-btn {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: var(--white);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        font-size: 18px;
+        color: var(--text);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, color 0.2s;
+        z-index: 5;
+      }
+
+      .svc-btn:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .svc-btn:disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+
+      @media (max-width: 900px) {
+        .svc-card { flex: 0 0 calc(50% - 10px); }
+      }
+
+      @media (max-width: 600px) {
+        .svc-card { flex: 0 0 calc(100% - 0px); }
+      }
+
+      /* ── GALLERY FILMSTRIP ── */
+      .gallery-filmstrip-section {
+        position: relative;
+      }
+
+      .gallery-filmstrip-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .gallery-strip-outer {
+        flex: 1;
+        overflow: hidden;
+        border-radius: 14px;
+      }
+
+      .gallery-strip {
+        display: flex;
+        gap: 12px;
+        height: 420px;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+      }
+
+      .gallery-strip-item {
+        height: 100%;
+        flex-shrink: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .gallery-strip-item img {
+        height: 100%;
+        width: auto;
+        display: block;
+        transition: transform 0.4s ease, filter 0.3s ease;
+      }
+
+      .gallery-strip-item:hover img {
+        transform: scale(1.04);
+        filter: brightness(1.05);
+      }
+
+      .gallery-film-btn {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: var(--white);
+        box-shadow: 0 2px 14px rgba(0,0,0,0.14);
+        font-size: 18px;
+        color: var(--text);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s, opacity 0.2s;
+        z-index: 5;
+      }
+
+      .gallery-film-btn:hover {
+        background: var(--primary);
+        color: var(--white);
+        box-shadow: 0 4px 18px rgba(15,76,129,0.28);
+      }
+
+      .gallery-film-btn:disabled {
+        opacity: 0.25;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      .gallery-film-hint {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 13px;
+        color: var(--sub);
+        letter-spacing: 0.3px;
+      }
+
+      @media (max-width: 900px) {
+        .gallery-strip { height: 320px; }
+      }
+
+      @media (max-width: 600px) {
+        .gallery-strip { height: 260px; gap: 8px; }
+        .gallery-film-btn { width: 36px; height: 36px; font-size: 15px; }
+      }
+
+      /* ============================================================
+       RESPONSIVE — MOBILE
+    ============================================================ */
+      @media (max-width: 900px) {
+        .section-pad {
+          padding: 50px 0;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .hero-image {
+          order: 1;
+        }
+        .hero-text {
+          order: 2;
+        }
+        .hero-img-wrap {
+          height: 260px;
+          border-radius: 14px;
+        }
+
+        #doctor .doctor-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .doctor-img-wrap {
+          max-width: 100%;
+          height: 360px;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        #why .why-grid {
+          grid-template-columns: 1fr;
+        }
+
+        #timings .timings-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        #contact .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .testimonial-btn.prev {
+          left: -14px;
+        }
+        .testimonial-btn.next {
+          right: -14px;
+        }
+
+        
+
+        .testimonial-card {
+          padding: 36px 28px;
+        }
+        .contact-form-wrap {
+          padding: 28px 24px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-ctas {
+          flex-direction: column;
+        }
+        .hero-ctas .btn {
+          width: 100%;
+        }
+        .radio-group {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================================================
+       1. NAVBAR
+  ============================================================ -->
+    <nav id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a
+          href="#hero"
+          class="nav-brand"
+          aria-label="Lakshmi Dental Care Home"
+        >
+          <img src="images/logo1.png" alt="Lakshmi Dental Care Logo" class="nav-logo">
+
+          <div class="brand-text">
+            <span class="brand-top">Lakshmi Dental Care</span>
+            <span class="brand-sub">For all your dental needs</span>
+          </div>
+        </a>
+
+          <ul class="nav-links">
+            <li><a href="#doctor">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why Choose Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <a href="tel:+919945312100" class="btn btn-primary nav-cta"
+            >Book an Appointment</a
+          >
+
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#doctor" class="mobile-link">About</a>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#why" class="mobile-link">Why Choose Us</a>
+        <a href="#testimonials" class="mobile-link">Testimonials</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="tel:+919945312100" class="btn btn-primary"
+          >Book an Appointment</a
+        >
+      </div>
+    </nav>
+
+    <!-- ============================================================
+       2. HERO SECTION
+  ============================================================ -->
+    <section id="hero" class="section-pad">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left: Text -->
+          <div class="hero-text">
+            <span class="hero-eyebrow">✦ Highly Trusted Dental Care in Bengaluru</span>
+            <h1 class="hero-headline">
+              Advanced Dental Care for Healthy & Confident Smiles
+            </h1>
+            <p class="hero-sub">
+              Comprehensive dental treatments with a patient-first approach.
+              From routine checkups to advanced restorative and cosmetic dentistry.
+            </p>
+
+            <!-- <div class="hero-badges">
+              <span class="badge badge-teal">Dental Surgeon</span>
+              <span class="badge badge-teal">Root Canal Treatment</span>
+              <span class="badge badge-teal">Cosmetic Dentistry</span>
+              <span class="badge badge-teal">Patient-Focused Care</span>
+            </div> -->
+
+            <div class="hero-ctas">
+              <a href="tel:+919945312100" class="btn btn-primary"
+                >📅 Book an Appointment</a
+              >
+            </div>
+
+            <div style="display:flex; gap:32px; margin-bottom:30px; flex-wrap:wrap;">
+              <div>
+                <div style="font-size:35px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">30+</div>
+                <div style="font-size:15px; color:var(--sub);">Years Experience</div>
+              </div>
+              <div>
+                <div style="font-size:35px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">1997</div>
+                <div style="font-size:15px; color:var(--sub);">Established</div>
+              </div>
+              <div>
+                <div style="font-size:35px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">11000+</div>
+                <div style="font-size:15px; color:var(--sub);">Patients Treated</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Hero Image -->
+          <div class="hero-image">
+            <div class="hero-img-wrap">
+              <img
+                src="images/hero-image.png"
+                alt="Image of your clinic, specialty or of your choice"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       3. MEET THE DOCTOR
+  ============================================================ -->
+    <section id="doctor" class="section-pad bg-alt">
+      <div class="container">
+        <div class="doctor-grid">
+          <!-- Left: Doctor Photo -->
+          <div>
+            <div class="doctor-img-wrap">
+              <img
+                src="images/doctor-image.jpg"
+                alt="Image of the doctor"
+              />
+            </div>
+          </div>
+
+          <!-- Right: Bio -->
+          <div>
+            <span class="section-label">Meet Your Doctor</span>
+            <h2 class="section-heading doctor-name">Dr (Sqn Ldr) Arvind P V
+            </h2>
+
+            <div class="badges-row">
+              <span class="badge badge-teal">🎓 BDS, PGDHHM</span>
+              <span class="badge badge-teal">🇮🇳 Former Squadron Leader, Indian Air Force</span>
+            </div>
+
+            <p class="doctor-bio">
+              <strong>Dr. Arvind P V</strong> is a highly experienced and qualified Dental Surgeon with over 30 years of dedicated practice in comprehensive dentistry. Before founding Lakshmi Dental Care Centre, he taught dental students for a year and served as a Squadron Leader in the Indian Air Force, a background that reflects his discipline, precision, and commitment to the highest standards of care.
+              <br /><br />
+              Since establishing Lakshmi Dental Care Centre in Vijayanagar in 1997, Dr. Arvind has built a practice trusted by thousands of families across Bengaluru. His expertise covers the complete spectrum of modern dentistry, from general checkups and root canal treatments to smile design, dental implants, orthodontics, and the latest advanced cosmetic dental procedures.
+              <br /><br />
+              To continuously enhance his expertise, Dr. Arvind has completed various national and international courses in laser dentistry, endodontics, implant procedures, and the latest advancements in dentistry. His clinic is equipped with modern, state-of-the-art dental technology to provide more comfortable, precise, and painless dental treatments.
+              <br /><br />
+              Known for his calm, transparent approach and clear explanation of every treatment and cost, Dr. Arvind believes that informed patients make confident decisions. Lakshmi Dental Care continues to maintain the highest hygiene standards while delivering quality dental care with the same discipline and commitment that defined his Indian Air Force career.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      4. SERVICES
+    ============================================================ -->
+    <section id="services" class="section-pad bg-white">
+      <div class="container">
+        <div class="services-intro">
+          <span class="section-label">What We Offer</span>
+          <h2 class="section-heading">All dental treatment solutions under one roof</h2>
+          <p class="section-sub">
+            Everything in dentistry under one roof. <br>From routine care to advanced surgical and cosmetic procedures.
+          </p>
+        </div>
+
+        <!-- Senior Citizen Offer Banner -->
+        <div style="
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          background: linear-gradient(135deg, #fff8e7 0%, #fef3c7 100%);
+          border: 1.5px solid #f59e0b;
+          border-left: 5px solid #f59e0b;
+          border-radius: 12px;
+          padding: 18px 24px;
+          margin-bottom: 32px;
+          flex-wrap: wrap;
+        ">
+          <div style="font-size: 36px; flex-shrink: 0;">👵🏼👴🏻</div>
+          <div style="flex: 1; min-width: 200px;">
+            <div style="
+              font-family: 'Playfair Display', serif;
+              font-size: 18px;
+              font-weight: 700;
+              color: #92400e;
+              margin-bottom: 4px;
+            ">Senior Citizens (above 65 years) get 10% off on all treatment procedures</div>
+            <div style="
+              font-family: 'Inter', sans-serif;
+              font-size: 13px;
+              color: #78350f;
+              line-height: 1.6;
+            ">*Applicable on all treatment procedures at our clinic. <em>Excludes laboratory charges.</em></div>
+          </div>
+          <div style="
+            background: #f59e0b;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            padding: 10px 20px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            letter-spacing: 0.5px;
+          ">10% OFF</div>
+        </div>
+
+        <div class="services-carousel-wrap">
+          <button class="svc-btn svc-prev" id="svcPrev" aria-label="Previous services">&#8592;</button>
+
+          <div class="services-track-outer">
+            <div class="services-track" id="servicesTrack">
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/general_checkup.png" alt="General Dental Checkup" />
+                </div>
+                <p class="svc-name">General Dental Checkups</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/teeth_cleaning.png" alt="Teeth Cleaning" />
+                </div>
+                <p class="svc-name">Teeth Cleaning & Sub-Gingival Curettage</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/root_canal.png" alt="Root Canal Treatment" />
+                </div>
+                <p class="svc-name">Root Canal Treatment</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/dental_implant.png" alt="Dental Implants" />
+                </div>
+                <p class="svc-name">Dental Implants</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/smile_design.png" alt="Smile Design" />
+                </div>
+                <p class="svc-name">Smile Design & Makeover</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/braces_aligners1.png" alt="Dental Braces" />
+                </div>
+                <p class="svc-name">Dental Braces & Aligners</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/crowns_brigdes.png" alt="Crowns and Bridges" />
+                </div>
+                <p class="svc-name">Crowns & Bridges</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/cosmetic_dentistry.png" alt="Cosmetic Dentistry" />
+                </div>
+                <p class="svc-name">Cosmetic Dentistry</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/teeth_whitening.png" alt="Teeth Whitening" />
+                </div>
+                <p class="svc-name">Teeth Whitening</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/dentures.png" alt="Dentures" />
+                </div>
+                <p class="svc-name">Complete & Partial Dentures</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/tooth_extraction.png" alt="Teeth Extraction" />
+                </div>
+                <p class="svc-name">Teeth Extraction</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/periodontal_treatment.png" alt="Periodontal Treatment" />
+                </div>
+                <p class="svc-name">Periodontal Treatment</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/broken_teeth_restoration.png" alt="Broken Teeth Restoration" />
+                </div>
+                <p class="svc-name">Broken Teeth Restoration</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/oral_cancer.png" alt="Oral Cancer Treatment" />
+                </div>
+                <p class="svc-name">Oral Cancer Treatment</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/gum_surgeries.png" alt="Gum Surgeries" />
+                </div>
+                <p class="svc-name">Gum Surgeries</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/crown_lengthening.png" alt="Crown Lengthening" />
+                </div>
+                <p class="svc-name">Crown Lengthening</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/child_dental_care.png" alt="Comprehensive Child Care" />
+                </div>
+                <p class="svc-name">Comprehensive Child Care</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/fracture_repair.png" alt="Fracture Repair" />
+                </div>
+                <p class="svc-name">Fracture Repair</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/laser_dental_treatments.png" alt="Laser Dental Treatments" />
+                </div>
+                <p class="svc-name">Laser Dental Treatments</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/teeth_fillings.jpeg" alt="Fillings" />
+                </div>
+                <p class="svc-name">All types of Fillings and Minimal Invasive Dentistry</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/avulsed_teeth.jpeg" alt="Avulsed Teeth" />
+                </div>
+                <p class="svc-name">Avulsed Teeth Treatment</p>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-img-wrap">
+                  <img src="images/general_checkup.png" alt="Intra & Extra Oral Surgeries" />
+                </div>
+                <p class="svc-name">Intra & Extra Oral Surgeries under Local & General Anesthesia</p>
+              </div>
+
+              </div>
+            </div>
+
+
+          <button class="svc-btn svc-next" id="svcNext" aria-label="Next services">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       5. WHY CHOOSE US
+  ============================================================ -->
+    <section id="why" class="section-pad bg-alt">
+      <div class="container">
+        <span class="section-label">Our Difference</span>
+        <h2 class="section-heading">
+          Why Patients Choose Lakshmi Dental Care
+        </h2>
+
+        <div class="why-grid">
+        <div class="why-card card">
+          <div class="why-icon">⭐</div>
+          <div>
+            <p class="why-title">Quality Dental Care with Lasting Results</p>
+            <p class="why-desc">Every treatment is focused on precision, durability, and patient comfort. With advanced techniques, quality materials, and decades of expertise, we ensure dental solutions that are reliable, safe, and built to last.</p>
+          </div>
+        </div>
+
+        <div class="why-card card">
+          <div class="why-icon">🏆</div>
+          <div>
+            <p class="why-title">30+ Years of Trusted Experience</p>
+            <p class="why-desc">Established in 1997, Lakshmi Dental Care has served Bengaluru families for over three decades. Dr. Arvind's deep experience means virtually every dental situation has been seen and treated.</p>
+          </div>
+        </div>
+
+        <div class="why-card card">
+          <div class="why-icon">🦷</div>
+          <div>
+            <p class="why-title">Complete Dentistry Under One Roof</p>
+            <p class="why-desc">From basic cleanings to implants, braces, smile design, sleep medicine, and oral surgery. We offer every dental treatment in one clinic. No referrals, no running around. Your complete dental health, managed here.</p>
+          </div>
+        </div>
+
+        <div class="why-card card">
+          <div class="why-icon">💬</div>
+          <div>
+            <p class="why-title">Transparent Costs, Clear Explanations</p>
+            <p class="why-desc">Dr. Arvind explains every treatment clearly and discusses costs upfront - no surprises, no pressure. Patients leave consultations informed and confident about their treatment plan.</p>
+          </div>
+        </div>
+
+        <div class="why-card card">
+          <div class="why-icon">🎖️</div>
+          <div>
+            <p class="why-title">Air Force Discipline & Precision</p>
+            <p class="why-desc">Dr. Arvind P V's background as a former Indian Air Force Squadron Leader brings military-grade precision and discipline to every procedure so you always get treatment that's thorough, careful, and done right the first time.</p>
+          </div>
+        </div>
+
+        <div class="why-card card">
+          <div class="why-icon">📍</div>
+          <div>
+            <p class="why-title">Conveniently Located in Vijayanagar</p>
+            <p class="why-desc">Centrally located in Vijayanagar, Bengaluru, with easy access for patients from Rajajinagar, Nagarbhavi, Basaveshwar Nagar, and surrounding areas. Walk-ins welcome alongside appointments.</p>
+          </div>
+        </div>
+      </div>
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       6. CLINIC TIMINGS + IMAGE SLIDESHOW
+  ============================================================ -->
+    <section id="timings" class="section-pad bg-white">
+      <div class="container">
+
+        <!-- CLINIC GALLERY -->
+        <div class="slideshow-section">
+          <span class="section-label">Gallery</span>
+          <h2 class="section-heading" style="margin-bottom:32px;">A Glimpse of Our Clinic</h2>
+          <div class="gallery-filmstrip-wrap">
+  <button class="gallery-film-btn" id="galPrev" aria-label="Scroll left">&#8592;</button>
+
+  <div class="gallery-strip-outer">
+    <div class="gallery-strip" id="galleryStrip">
+
+      <div class="gallery-strip-item g-item">
+        <img src="images/clinic_image1.jpg" alt="Clinic exterior" />
+      </div>
+      <div class="gallery-strip-item g-item">
+        <img src="images/clinic_image2.jpg" alt="Clinic entrance" />
+      </div>
+      <div class="gallery-strip-item g-item">
+        <img src="images/clinic_image3.jpg" alt="Clinic entrance view" />
+      </div>
+      <div class="gallery-strip-item g-item">
+        <img src="images/clinic_image4.jpg" alt="Waiting area" />
+      </div>
+      <div class="gallery-strip-item g-item">
+        <img src="images/clinic_image5.jpg" alt="Clinic lobby entrance" />
+      </div>
+      <div class="gallery-strip-item g-item">
+        <img src="images/clinic_image6.jpg" alt="Reception and waiting" />
+      </div>
+      <div class="gallery-strip-item g-item">
+        <img src="images/clinic_image7.jpg" alt="Treatment room 1" />
+      </div>
+      <div class="gallery-strip-item g-item">
+        <img src="images/clinic_image8.jpg" alt="Treatment room 2" />
+      </div>
+
+    </div>
+  </div>
+
+  <button class="gallery-film-btn" id="galNext" aria-label="Scroll right">&#8594;</button>
+</div>
+
+<p class="gallery-film-hint">← Scroll to explore the clinic →</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       7. TESTIMONIALS
+  ============================================================ -->
+    <section id="testimonials" class="section-pad bg-alt">
+      <div class="container">
+        <div class="testimonials-intro">
+          <span class="section-label">Patient Stories</span>
+          <h2 class="section-heading">What Our Patients Say</h2>
+          <p class="section-sub" style="max-width:100%; white-space:nowrap;">
+            Real words from patients who've experienced care at Lakshmi Dental Care
+          </p>
+        </div>
+
+        <div class="testimonial-carousel">
+          <div class="testimonial-slides-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-slide active">
+              <div class="testimonial-card card">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">
+                  I had root canal treatments. I'm thankful for the good work in fixing my teeth with least pain and ease. It was taken care very well by Dr. Arvind P V and team. The hygiene of the place is well maintained with quality work, appointments were promptly executed by team of professional practitioners. Costs are reasonable. I Highly recommend Lakshmi Dental Care Centre, Vijayanagar for all dental procedures.
+                </p>
+                <div class="testimonial-meta">
+                  <div class="meta-avatar">S</div>
+                  <div>
+                    <div class="meta-name">Sujini</div>
+                    <div class="meta-role">Patient</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card card">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">
+                  One of the most experienced and professional dentist I have come across. Been under his care for past 20 years. As far as his clinic, it is one of the most safety conscious clinic with regular sanitisations and protocols being maintained.
+                  Highly recommended.
+                </p>
+                <div class="testimonial-meta">
+                  <div class="meta-avatar">A</div>
+                  <div>
+                    <div class="meta-name">Aji George</div>
+                    <div class="meta-role">Patient</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card card">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">
+                  The Dental Treatment Provided is Very Good.
+                  Dr. Aravind is very cordial and explains Treatment and Cost clearly.
+                  The Clinic is well planned and has all facilities required and maintained Hygienically.
+                  The Staff at the Clinic are very helpful and understands Patient needs and Communicates well. They follow all Covid Appropriate Behaviours.
+                </p>
+                <div class="testimonial-meta">
+                  <div class="meta-avatar">J</div>
+                  <div>
+                    <div class="meta-name">JaiBharath</div>
+                    <div class="meta-role">Patient</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card card">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">
+                  Myself and my wife have visited many times to this dental clinic. Dr. ARVIND has taken very good care and treated well. This is one of the good dental clinic which I have come across in Bangalore.
+                </p>
+                <div class="testimonial-meta">
+                  <div class="meta-avatar">S</div>
+                  <div>
+                    <div class="meta-name">Shivashankar</div>
+                    <div class="meta-role">Patient</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card card">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">
+                  I was here for my annual check up recently. I was apprehensive as it was during the pandemic situation. Once I stepped in to the clinic I was fully at ease. The clinic is spic and span! I was greeted warmly and even explained the descaling procedure in detail! The doctor was very professional and thorough. I will come back again when my next checkup is due. The pricing was very reasonable too.
+                  Also, there is a wide variety of electric toothbrushes and flossing equipment which are available here. One usually doesn’t get them at our local pharmacies. A big plus. I will definitely visit here again and again
+                  Kudos to Dr Aravind and team!
+                </p>
+                <div class="testimonial-meta">
+                  <div class="meta-avatar">S</div>
+                  <div>
+                    <div class="meta-name">Sudheer</div>
+                    <div class="meta-role">Patient</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button
+            class="testimonial-btn prev"
+            id="testPrev"
+            aria-label="Previous testimonial"
+          >
+            &#8592;
+          </button>
+          <button
+            class="testimonial-btn next"
+            id="testNext"
+            aria-label="Next testimonial"
+          >
+            &#8594;
+          </button>
+
+          <div class="slide-dots" id="testDots" style="margin-top: 22px">
+            <div class="dot active" data-test="0"></div>
+            <div class="dot" data-test="1"></div>
+            <div class="dot" data-test="2"></div>
+            <div class="dot" data-test="3"></div>
+            <div class="dot" data-test="4"></div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       8. CONTACT
+  ============================================================ -->
+    <section id="contact" class="section-pad bg-white">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Left: Contact info -->
+          <div class="contact-left">
+            <span class="section-label">Get in Touch</span>
+            <h2 class="section-heading">Book an Appointment</h2>
+            <p class="tagline">We'd love to see you.</p>
+            
+
+            <div class="contact-info-item">
+              <div class="cii-icon">📞</div>
+              <div>
+                <div class="cii-label">Phone</div>
+                <div class="cii-value">
+                  <a href="tel:+919945312100">+91 99453 12100</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="cii-icon">💬</div>
+              <div>
+                <div class="cii-label">WhatsApp</div>
+                <div class="cii-value">
+                  <a href="https://wa.me/+919945312100">+91 99453 12100</a
+                  ><br /><span style="font-size: 13px; color: var(--sub)"
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="cii-icon">📍</div>
+              <div>
+                <div class="cii-label">Clinic Address</div>
+                <div class="cii-value">
+                  Govindaraja Nagar Ward, MC Layout, Vijayanagar, Bengaluru, Karnataka 560040
+                </div>
+              </div>
+            </div>
+
+            <div class="fee-note">
+              <span class="fee-icon">💳</span>
+              <span
+                ><strong>Consultation Fee: ₹350</strong></span
+              >
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="maps-embed" style="margin-top: 24px;">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9654758256984!2d77.537855!3d12.97406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ddd6beb660d%3A0x946c6b6120dde4e5!2sLakshmi%20Dental%20Care%20Centre!5e0!3m2!1sen!2sin!4v1779969650266!5m2!1sen!2sin"
+                width="100%"
+                height="240"
+                style="border:0; border-radius:20px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lakshmi Dental Care Location">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Right: Clinic Timings -->
+          <div class="contact-timings-wrap card" style="padding: 20px;">
+            <h3 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:24px;">
+              Clinic Timings
+            </h3>
+            <table class="timings-table">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Morning</th>
+                  <th>Evening</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="day">Monday</td><td>10:00 AM – 2:00 PM</td><td>5:00 PM – 8:30 PM</td></tr>
+                <tr><td class="day">Tuesday</td><td>10:00 AM – 2:00 PM</td><td>5:00 PM – 8:30 PM</td></tr>
+                <tr><td class="day">Wednesday</td><td>10:00 AM – 2:00 PM</td><td>5:00 PM – 8:30 PM</td></tr>
+                <tr><td class="day">Thursday</td><td>10:00 AM – 2:00 PM</td><td>5:00 PM – 8:30 PM</td></tr>
+                <tr><td class="day">Friday</td><td>10:00 AM – 2:00 PM</td><td>5:00 PM – 8:30 PM</td></tr>
+                <tr><td class="day">Saturday</td><td>10:00 AM – 2:00 PM</td><td>5:00 PM – 8:30 PM</td></tr>
+                <tr><td class="day">Sunday</td><td>Holiday</td></tr>
+                <tr><td class="day">Emergency</td><td class="closed" colspan="2">Available 24/7 over call (+91 98456 55067)</td></tr>
+              </tbody>
+            </table>
+            <p class="timings-note" style="margin-top:16px;">
+              For appointments, call or WhatsApp us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       9. FOOTER
+  ============================================================ -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <div class="brand-top">Lakshmi</div>
+            <div class="brand-sub">Dental Care</div>
+            <p class="footer-tagline">
+              Comprehensive dental treatments with a patient-first approach.
+              From routine checkups to advanced restorative and cosmetic dentistry.<br />Vijaynagar, Bengaluru
+            </p>
+          </div>
+
+          <!-- Quick links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#doctor">About Dr. Arvind P V</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#why">Why Choose Us</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-item">
+              <span class="fci">📞</span>
+              <span><a href="tel:+919945312100">+91 99453 12100</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <span class="fci">💬</span>
+              <span
+                ><a href="https://wa.me/+919945312100"
+                  >WhatsApp: +91 9945312100</a
+                ></span
+              >
+            </div>
+            <div class="footer-contact-item">
+              <span class="fci">📍</span>
+              <span>Vijaynagar, Bengaluru, Karnataka</span>
+            </div>
+            <div class="footer-contact-item">
+              <span class="fci">⏰</span>
+              <span>Mon–Sat: 10:00 AM – 2:00 PM &amp; <br>5:00 PM – 8:30 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          © 2026 Lakshmi Dental Care. All rights reserved
+
+          <!-- <a
+            href="https://www.linkedin.com/in/ashishsn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="developer-credit"
+          >
+            Website by Ashish S N
+          </a> -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================
+       FLOATING ELEMENTS
+  ============================================================ -->
+    <!-- WhatsApp floating button -->
+    <a
+      href="https://wa.me/+919945312100"
+      class="float-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        />
+      </svg>
+    </a>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">&#215;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="Clinic image" />
+    </div>
+
+    <!-- Back to top button -->
+    <button class="float-backtop" id="backTop" aria-label="Back to top">
+      ↑
+    </button>
+
+    <!-- ============================================================
+       ALL JAVASCRIPT
+  ============================================================ -->
+    <script>
+      // ── NAVBAR SCROLL EFFECT ──
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // ── HAMBURGER MENU ──
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        hamburger.classList.toggle("open", isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Close mobile menu when any link is clicked
+      document
+        .querySelectorAll(".mobile-link, .mobile-menu .btn")
+        .forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            hamburger.classList.remove("open");
+            hamburger.setAttribute("aria-expanded", "false");
+          });
+        });
+
+      // ── TESTIMONIALS CAROUSEL ──
+      (function () {
+        let current = 0;
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const dots = document.querySelectorAll("#testDots .dot");
+        const total = slides.length;
+
+        function goTo(n) {
+          slides[current].classList.remove("active");
+          dots[current].classList.remove("active");
+          current = (n + total) % total;
+          slides[current].classList.add("active");
+          dots[current].classList.add("active");
+        }
+
+        document
+          .getElementById("testPrev")
+          .addEventListener("click", () => goTo(current - 1));
+        document
+          .getElementById("testNext")
+          .addEventListener("click", () => goTo(current + 1));
+
+        dots.forEach((dot) => {
+          dot.addEventListener("click", () => goTo(parseInt(dot.dataset.test)));
+        });
+      })();
+
+      // ── GALLERY FILMSTRIP ──
+      (function() {
+        const strip = document.getElementById('galleryStrip');
+        const outer = strip.parentElement;
+        const prevBtn = document.getElementById('galPrev');
+        const nextBtn = document.getElementById('galNext');
+        let offset = 0;
+
+        function getMax() {
+          return strip.scrollWidth - outer.offsetWidth;
+        }
+
+        function scrollBy(amount) {
+          const max = getMax();
+          offset = Math.max(0, Math.min(offset + amount, max));
+          strip.style.transform = `translateX(-${offset}px)`;
+          prevBtn.disabled = offset <= 0;
+          nextBtn.disabled = offset >= max - 1;
+        }
+
+        function scrollStep(dir) {
+          scrollBy(dir * outer.offsetWidth * 0.72);
+        }
+
+        prevBtn.addEventListener('click', () => scrollStep(-1));
+        nextBtn.addEventListener('click', () => scrollStep(1));
+
+        // Wait for images to load so scrollWidth is accurate
+        window.addEventListener('load', () => {
+          prevBtn.disabled = true;
+          nextBtn.disabled = getMax() <= 0;
+        });
+
+        window.addEventListener('resize', () => {
+          offset = 0;
+          strip.style.transform = 'translateX(0)';
+          prevBtn.disabled = true;
+          nextBtn.disabled = getMax() <= 0;
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        outer.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        outer.addEventListener('touchend', e => {
+          const diff = touchStartX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 40) scrollBy(diff * 1.5);
+        });
+      })();
+
+      // ── BACK TO TOP BUTTON ──
+      const backTop = document.getElementById("backTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backTop.classList.add("visible");
+        } else {
+          backTop.classList.remove("visible");
+        }
+      });
+
+      backTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // ── LIGHTBOX ──
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxClose = document.getElementById('lightboxClose');
+
+      document.querySelectorAll('.g-item img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+      // ── SERVICES CAROUSEL ──
+      (function() {
+        const track = document.getElementById('servicesTrack');
+        const prevBtn = document.getElementById('svcPrev');
+        const nextBtn = document.getElementById('svcNext');
+        const cards = track.querySelectorAll('.svc-card');
+        const carouselOuter = document.querySelector('.services-track-outer');
+
+        function getVisible() {
+          if (window.innerWidth <= 600) return 1;
+          if (window.innerWidth <= 900) return 2;
+          return 3;
+        }
+
+        let current = 0;
+
+        function update() {
+          const visible = getVisible();
+          const total = cards.length;
+          const max = total - visible;
+          if (current < 0) current = 0;
+          if (current > max) current = max;
+
+          const cardWidth = cards[0].offsetWidth + 20;
+          track.style.transform = `translateX(-${current * cardWidth}px)`;
+
+          prevBtn.disabled = current === 0;
+          nextBtn.disabled = current >= max;
+        }
+
+        prevBtn.addEventListener('click', () => { current--; update(); });
+        nextBtn.addEventListener('click', () => { current++; update(); });
+        window.addEventListener('resize', () => {
+          current = 0;
+          update();
+        });
+
+        let lastScroll = 0;
+
+      carouselOuter.addEventListener('wheel', (e) => {
+
+        // Only react to horizontal trackpad gestures
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+
+          const now = Date.now();
+
+          // Prevent rapid-fire scrolling
+          if (now - lastScroll < 400) return;
+
+          lastScroll = now;
+
+          const visible = getVisible();
+          const max = cards.length - visible;
+
+          if (e.deltaX > 5 && current < max) {
+            current++;
+            update();
+            e.preventDefault();
+          }
+
+          if (e.deltaX < -5 && current > 0) {
+            current--;
+            update();
+            e.preventDefault();
+          }
+
+          e.preventDefault();
+        }
+
+      }, { passive: false });
+
+        update();
+      })();  
+
+
+      // ── SMOOTH SCROLL for nav links (fallback for older browsers) ──
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            const navHeight = 72;
+            const top =
+              target.getBoundingClientRect().top + window.scrollY - navHeight;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
