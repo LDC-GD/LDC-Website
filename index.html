@@ -58,6 +58,7 @@
 
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       body {
@@ -93,7 +94,7 @@
         width: 100%;
         max-width: 1140px;
         margin: 0 auto;
-        padding: 0 24px;
+        padding: 0 20px;
       }
 
       .section-pad {
@@ -292,8 +293,8 @@
       }
 
       .nav-logo {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         object-fit: contain;
         flex-shrink: 0;
       }
@@ -343,7 +344,7 @@
       }
       .hamburger span {
         display: block;
-        width: 24px;
+        width: 20px;
         height: 2px;
         background: var(--text);
         border-radius: 2px;
@@ -1448,6 +1449,7 @@
           flex-direction: column;
           gap: 28px;
           width: 100%;
+          align-items: stretch;
         }
         .hero-image {
           order: 1;
@@ -1457,6 +1459,7 @@
           order: 2;
           width: 100%;
         }
+
         .hero-img-wrap {
           height: 260px;
           border-radius: 14px;
@@ -1517,11 +1520,44 @@
         .nav-links {
           display: none;
         }
+
         .nav-cta {
           display: none;
         }
+
+        .nav-inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .nav-brand {
+          flex: 1;
+          min-width: 0;
+        }
+
+        .brand-text {
+          overflow: hidden;
+        }
+
+        .brand-top {
+          font-size: 18px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .brand-sub {
+          font-size: 10px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
         .hamburger {
           display: flex;
+          margin-left: 12px;
+          flex-shrink: 0;
         }
       }
 
@@ -1538,6 +1574,15 @@
         .radio-group {
           flex-direction: column;
           gap: 10px;
+        }
+      }
+      @media (max-width: 480px) {
+        .doctor-name {
+          font-size: 25px !important;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 100%;
         }
       }
     </style>
