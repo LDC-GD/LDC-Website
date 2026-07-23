@@ -1483,6 +1483,28 @@
           height: 360px;
         }
 
+        /* ===== Doctor Bio Read More ===== */
+        .doctor-bio-more{
+            display:none;
+        }
+
+        .doctor-bio.expanded .doctor-bio-more{
+            display:inline;
+        }
+
+        .doctor-read-more{
+            display:inline-block;
+            margin-top:12px;
+            color:var(--primary);
+            font-weight:600;
+            cursor:pointer;
+            text-decoration:none;
+        }
+
+        .doctor-read-more:hover{
+            text-decoration:underline;
+        }
+
         .services-grid {
           grid-template-columns: 1fr 1fr;
         }
@@ -1800,13 +1822,18 @@
             </div>
 
             <p class="doctor-bio">
+              <span class="doctor-bio-preview">
               <strong>Dr. Arvind P V</strong> is a highly experienced and qualified Dental Surgeon with over 30 years of dedicated practice in comprehensive dentistry. Before founding Lakshmi Dental Care Centre, he taught dental students for a year and served as a Squadron Leader in the Indian Air Force, a background that reflects his discipline, precision, and commitment to the highest standards of care.
-              <br /><br />
+              </span>
+              <span class="doctor-bio-more">
+              <br><br>
               Since establishing Lakshmi Dental Care Centre in Vijayanagar in 1997, Dr. Arvind has built a practice trusted by thousands of families across Bengaluru. His expertise covers the complete spectrum of modern dentistry, from general checkups and root canal treatments to smile design, dental implants, orthodontics, and the latest advanced cosmetic dental procedures.
               <br /><br />
               To continuously enhance his expertise, Dr. Arvind has completed various national and international courses in laser dentistry, endodontics, implant procedures, and the latest advancements in dentistry. His clinic is equipped with modern, state-of-the-art dental technology to provide more comfortable, precise, and painless dental treatments.
               <br /><br />
               Known for his calm, transparent approach and clear explanation of every treatment and cost, Dr. Arvind believes that informed patients make confident decisions. Lakshmi Dental Care continues to maintain the highest hygiene standards while delivering quality dental care with the same discipline and commitment that defined his Indian Air Force career.
+            </span>
+            <a href="#" class="doctor-read-more">Read more...</a>
             </p>
           </div>
         </div>
@@ -2536,47 +2563,72 @@
       
       /* ===== MOBILE WHY ACCORDION ===== */
 
-if (window.innerWidth <= 900) {
+      if (window.innerWidth <= 900) {
 
-    document.querySelectorAll(".why-card").forEach(card => {
+          document.querySelectorAll(".why-card").forEach(card => {
 
-        const toggle = document.createElement("div");
+              const toggle = document.createElement("div");
 
-        toggle.className = "why-toggle";
+              toggle.className = "why-toggle";
 
-        toggle.innerHTML = "⌄";
+              toggle.innerHTML = "⌄";
 
-        card.appendChild(toggle);
+              card.appendChild(toggle);
 
-        toggle.addEventListener("click", function(e){
+              toggle.addEventListener("click", function(e){
 
-            e.stopPropagation();
+                  e.stopPropagation();
 
-            document.querySelectorAll(".why-card").forEach(c=>{
-                if(c!==card){
-                    c.classList.remove("open");
-                }
-            });
+                  document.querySelectorAll(".why-card").forEach(c=>{
+                      if(c!==card){
+                          c.classList.remove("open");
+                      }
+                  });
 
-            card.classList.toggle("open");
+                  card.classList.toggle("open");
 
-        });
+              });
 
-        card.addEventListener("click", function(){
+              card.addEventListener("click", function(){
 
-            document.querySelectorAll(".why-card").forEach(c=>{
-                if(c!==card){
-                    c.classList.remove("open");
-                }
-            });
+                  document.querySelectorAll(".why-card").forEach(c=>{
+                      if(c!==card){
+                          c.classList.remove("open");
+                      }
+                  });
 
-            card.classList.toggle("open");
+                  card.classList.toggle("open");
 
-        });
+              });
 
-    });
+          });
 
-}
+      }
+
+      /* ===== Doctor Read More ===== */
+
+      if(window.innerWidth <= 900){
+
+          const bio = document.querySelector(".doctor-bio");
+          const btn = document.querySelector(".doctor-read-more");
+
+          if(bio && btn){
+
+              btn.addEventListener("click", function(e){
+
+                  e.preventDefault();
+
+                  bio.classList.toggle("expanded");
+
+                  btn.textContent = bio.classList.contains("expanded")
+                      ? "Read less"
+                      : "Read more...";
+
+              });
+
+          }
+
+      }
 
       // ── TESTIMONIALS CAROUSEL ──
       (function () {
