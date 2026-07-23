@@ -1492,68 +1492,67 @@
         }
 
         /* ===== Mobile Accordion (Why Choose Us) ===== */
+        .why-card{
+            position:relative;
+            display:block;
+            padding:18px 18px 16px;
+        }
 
-.why-card{
-    position:relative;
-    display:block;
-    padding:18px 18px 16px;
-}
+        .why-icon{
+            width:46px;
+            height:46px;
+            font-size:24px;
+            margin-bottom:12px;
+        }
 
-.why-icon{
-    width:46px;
-    height:46px;
-    font-size:24px;
-    margin-bottom:12px;
-}
+        .why-title{
+            padding-right:40px;
+            margin-bottom:0;
+            font-size:16px;
+            line-height:1.35;
+        }
 
-.why-title{
-    padding-right:40px;
-    margin-bottom:0;
-    font-size:16px;
-    line-height:1.35;
-}
+        .why-desc{
+            max-height:0;
+            overflow:hidden;
+            opacity:0;
+            margin-top:0;
+            transition:
+                max-height .35s ease,
+                opacity .25s ease,
+                margin-top .25s ease;
+        }
 
-.why-desc{
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-    margin-top:0;
-    transition:
-        max-height .35s ease,
-        opacity .25s ease,
-        margin-top .25s ease;
-}
+        .why-card.open .why-desc{
+            max-height:300px;
+            opacity:1;
+            margin-top:14px;
+        }
 
-.why-card.open .why-desc{
-    max-height:300px;
-    opacity:1;
-    margin-top:14px;
-}
+        .why-toggle{
+            position:absolute;
+            top:22px;
+            right:18px;
+            width:28px;
+            height:28px;
+            border-radius:50%;
+            background:rgba(15,76,129,.08);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+            font-size:16px;
+            transition:.3s;
+            user-select:none;
+        }
 
-.why-toggle{
-    position:absolute;
-    top:22px;
-    right:18px;
-    width:28px;
-    height:28px;
-    border-radius:50%;
-    background:rgba(15,76,129,.08);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    font-size:16px;
-    transition:.3s;
-    user-select:none;
-}
+        .why-toggle:hover{
+            background:rgba(15,76,129,.18);
+        }
 
-.why-toggle:hover{
-    background:rgba(15,76,129,.18);
-}
-
-.why-card.open .why-toggle{
-    transform:rotate(180deg);
-}
+        .why-card.open .why-toggle{
+            transform:rotate(180deg);
+        }
 
         #timings .timings-grid {
           grid-template-columns: 1fr;
@@ -1577,7 +1576,6 @@
           right: -14px;
         }
         
-
         .testimonial-card {
           padding: 36px 28px;
         }
