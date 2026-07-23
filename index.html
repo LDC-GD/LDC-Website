@@ -569,6 +569,15 @@
         color: var(--text);
       }
 
+      /* Hide Read More by default (Desktop) */
+      .doctor-read-more{
+          display:none;
+      }
+
+      .doctor-bio-more{
+          display:inline;
+      }
+
       /* ============================================================
        4. SERVICES
     ============================================================ */
@@ -2616,15 +2625,16 @@
 
               btn.addEventListener("click", function(e){
 
-                  e.preventDefault();
+    e.preventDefault();
+    e.stopPropagation();
 
-                  bio.classList.toggle("expanded");
+    bio.classList.toggle("expanded");
 
-                  btn.textContent = bio.classList.contains("expanded")
-                      ? "Read less"
-                      : "Read more...";
+    btn.textContent = bio.classList.contains("expanded")
+        ? "Read less"
+        : "Read more...";
 
-              });
+});
 
           }
 
