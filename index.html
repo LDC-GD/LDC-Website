@@ -67,6 +67,7 @@
         line-height: 1.65;
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
 
       h1,
@@ -518,7 +519,7 @@
       }
 
       .doctor-name {
-        font-size: clamp(35px, 3.5vw, 36px);
+        font-size: clamp(30px, 3.5vw, 36px);
         margin-bottom: 16px;
       }
 
@@ -1443,23 +1444,29 @@
         }
 
         .hero-grid {
-          grid-template-columns: 1fr;
+          display: flex;
+          flex-direction: column;
           gap: 28px;
+          width: 100%;
         }
         .hero-image {
           order: 1;
+          width: 100%;
         }
         .hero-text {
           order: 2;
+          width: 100%;
         }
         .hero-img-wrap {
           height: 260px;
           border-radius: 14px;
+          width: 100%;
+          max-width: 100%;
         }
-        #hero {
+         #hero {
           padding: 100px 0 40px;
         }
-
+        
         #doctor .doctor-grid {
           grid-template-columns: 1fr;
           gap: 32px;
@@ -1498,7 +1505,6 @@
         .testimonial-btn.next {
           right: -14px;
         }
-
         
 
         .testimonial-card {
@@ -1622,18 +1628,18 @@
               >
             </div>
 
-            <div style="display:flex; gap:32px; margin-bottom:30px; flex-wrap:wrap;">
-              <div>
-                <div style="font-size:35px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">30+</div>
-                <div style="font-size:15px; color:var(--sub);">Years Experience</div>
+            <div style="display:flex; gap:12px; margin-bottom:30px; flex-wrap:nowrap; align-items:flex-start;">
+              <div style="flex:1; min-width:0;">
+                <div style="font-size:26px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">30+</div>
+                <div style="font-size:12px; color:var(--sub); white-space:nowrap;">Years Experience</div>
               </div>
-              <div>
-                <div style="font-size:35px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">1997</div>
-                <div style="font-size:15px; color:var(--sub);">Established</div>
+              <div style="flex:1; min-width:0;">
+                <div style="font-size:26px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">1997</div>
+                <div style="font-size:12px; color:var(--sub); white-space:nowrap;">Established</div>
               </div>
-              <div>
-                <div style="font-size:35px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">11000+</div>
-                <div style="font-size:15px; color:var(--sub);">Patients Treated</div>
+              <div style="flex:1; min-width:0;">
+                <div style="font-size:26px; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif;">11000+</div>
+                <div style="font-size:12px; color:var(--sub); white-space:nowrap;">Patients Treated</div>
               </div>
             </div>
           </div>
