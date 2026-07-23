@@ -2625,16 +2625,16 @@
 
               btn.addEventListener("click", function(e){
 
-    e.preventDefault();
-    e.stopPropagation();
+          e.preventDefault();
+          e.stopPropagation();
 
-    bio.classList.toggle("expanded");
+          bio.classList.toggle("expanded");
 
-    btn.textContent = bio.classList.contains("expanded")
-        ? "Read less"
-        : "Read more...";
+          btn.textContent = bio.classList.contains("expanded")
+              ? "Read less"
+              : "Read more...";
 
-});
+      });
 
           }
 
