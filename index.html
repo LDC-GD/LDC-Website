@@ -2838,6 +2838,35 @@
 
       }, { passive: false });
 
+        // ===== Mobile finger swipe =====
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      carouselOuter.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+      
+      carouselOuter.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+      
+        const diff = touchStartX - touchEndX;
+      
+        if (Math.abs(diff) < 40) return;
+      
+        const visible = getVisible();
+        const max = cards.length - visible;
+      
+        if (diff > 0 && current < max) {
+          current++;
+          update();
+        }
+      
+        if (diff < 0 && current > 0) {
+          current--;
+          update();
+        }
+      }, { passive: true });
+
         update();
       })();  
 
