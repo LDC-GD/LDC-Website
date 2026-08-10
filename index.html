@@ -1639,12 +1639,18 @@
           display: none;
         }
 
+        .hero-eyebrow {
+          font-size: 12px;
+          padding: 6px 16px;
+        }
+
         .nav-inner {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          height: 72px;
         }
-
+        
         .nav-brand {
           flex: 1;
           min-width: 0;
@@ -1654,15 +1660,16 @@
           overflow: hidden;
         }
 
-        .brand-top {
+        .nav-brand .brand-top {
           font-size: 18px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
-
-        .brand-sub {
+        
+        .nav-brand .brand-sub {
           font-size: 10px;
+          color: var(--sub);
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
